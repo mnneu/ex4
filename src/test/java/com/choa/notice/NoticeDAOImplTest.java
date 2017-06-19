@@ -16,20 +16,7 @@ import junit.framework.Assert;
 public class NoticeDAOImplTest {
 
 	
-	@Inject
-	private NoticeDAOImpl noticeDAO;
-	
-	//@Test
-	public void test()throws Exception {
-		
-		
-	}
-	
-	@Test
-	public void test2()throws Exception{
-		
-		
-	}
+
 	
 
 }

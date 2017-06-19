@@ -6,6 +6,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript">
+var m = '${message}';
+if(m != ''){
+	alert(m);
+}
+</script>
 </head>
 <body>
 <h1>${board}</h1>
@@ -18,7 +24,7 @@
 	<td>${dto.num}</td>	
 	<td>
 	<c:catch>
-	<c:forEach begin="1" end="${dto.depth }">@</c:forEach>
+	<c:forEach begin="1" end="${dto.depth}">@</c:forEach>
 	</c:catch>
 	<a href="./${board}View?num=${dto.num}">${dto.title}</a>	
 	</td>
