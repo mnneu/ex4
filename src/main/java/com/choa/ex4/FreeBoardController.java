@@ -12,6 +12,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.choa.free.FreeBoardDTO;
 import com.choa.free.FreeBoardServiceImpl;
 import com.choa.notice.NoticeDTO;
+import com.choa.util.ListInfo;
 
 @Controller
 @RequestMapping(value="/freeboard/**")
@@ -22,9 +23,9 @@ public class FreeBoardController {
 	FreeBoardServiceImpl freeBoardServiceImpl;
 	
 	@RequestMapping(value="freeboardList")
-	public String boardList(@RequestParam(defaultValue="1") Integer curPage, Model model)throws Exception{
+	public String boardList(Model model, ListInfo listInfo)throws Exception{
 		model.addAttribute("board", "freeboard");
-		model.addAttribute("list", freeBoardServiceImpl.boardList(curPage));
+		model.addAttribute("list", freeBoardServiceImpl.boardList(listInfo));
 		
 		return "board/boardList";
 		

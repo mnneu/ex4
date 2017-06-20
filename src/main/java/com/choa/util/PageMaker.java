@@ -33,11 +33,10 @@ public class PageMaker {
 		return makePage;
 	}
 
-	public RowMaker getRowMaker(String kind, String search) {
+	public RowMaker getRowMaker() {
 		rowMaker = new RowMaker();
 		rowMaker.setRow(curPage, perPage);
-		rowMaker.setKind(kind);
-		rowMaker.setSearch(search);
+		
 		return rowMaker;
 	}
 	

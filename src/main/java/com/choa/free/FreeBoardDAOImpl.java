@@ -16,6 +16,7 @@ import com.choa.board.BoardDAO;
 import com.choa.board.BoardDTO;
 import com.choa.notice.NoticeDTO;
 import com.choa.util.DBConnect;
+import com.choa.util.ListInfo;
 import com.choa.util.RowMaker;
 
 @Repository
@@ -29,9 +30,9 @@ public class FreeBoardDAOImpl implements BoardDAO{
 	
 	
 	@Override
-	public List<BoardDTO> boardList(RowMaker rowMaker) throws Exception {
+	public List<BoardDTO> boardList(ListInfo listInfo) throws Exception {
 		
-		return sqlSession.selectList(NAMESPACE+"list", rowMaker);
+		return sqlSession.selectList(NAMESPACE+"list", listInfo);
 		
 	}
 
@@ -68,8 +69,8 @@ public class FreeBoardDAOImpl implements BoardDAO{
 	}
 
 	@Override
-	public int boardCount() throws Exception {
-		int result = sqlSession.selectOne(NAMESPACE+"count");
+	public int boardCount(ListInfo listInfo) throws Exception {
+		int result = sqlSession.selectOne(NAMESPACE+"count", listInfo);
 		
 		return result;
 	}
